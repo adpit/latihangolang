@@ -1,1 +1,1 @@
-# latihangolang
+# kenapa ini kosong?
