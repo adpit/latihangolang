@@ -1,1 +1,1 @@
-# kenapa ini kosong?
+# Cara belajar Programing GO, by ADPIT
