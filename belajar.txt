@@ -1,3 +1,4 @@
+edit dari browser git
 # materi, setup editor ATOM
 download git dan install dulu,
 download dan install atom editor
