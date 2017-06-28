@@ -86,9 +86,9 @@ git config --global user.name "arieibra rumah"
 git config --global user.email adpit31@gmail.com
 
 
-coba edit sebuah file pada project yang kita clone tadi, ctrl + shift + p "add plus".
+coba edit sebuah file pada project yang kita clone tadi lalu simpan(ini penting), ctrl + shift + p "add plus".
 tekan ctrl+shift+p "commit plus", tulisakan keterangan updatenya., jangan lupa ctrl+s untuk simpan
-tekan ctrl+shift+p "push plus", jika step ini berhasil cek pada 
+tekan ctrl+shift+p "push plus", jika step ini berhasil cek pada
 https://github.com/adpit/latihangolang/commits/master
 (bisa juga commit pada window git+ pada terminal atom)
 
