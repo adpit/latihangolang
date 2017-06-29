@@ -1,4 +1,4 @@
-edit dari browser git
+edit dari browser kantor
 # materi, setup editor ATOM
 download git dan install dulu,
 download dan install atom editor
