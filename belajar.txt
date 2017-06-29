@@ -1,4 +1,4 @@
-edit dari browser kantor
+
 # materi, setup editor ATOM
 download git dan install dulu,
 download dan install atom editor
@@ -93,6 +93,11 @@ tekan ctrl+shift+p "push plus", jika step ini berhasil cek pada
 https://github.com/adpit/latihangolang/commits/master
 (bisa juga commit pada window git+ pada terminal atom)
 
+jadi caranya untuk edit dan simpan ke github adalah
+1.editfile(simpan)
+2.git add
+3.git commit(beri penjelasan simpan)
+4.git push (nanti dimita user dan password jika belum)
 
 add paket pada atom editor, git clone
 file:///C:/Users/adpit/Desktop/data/atom-x64-windows/add-paket-atom.gif
