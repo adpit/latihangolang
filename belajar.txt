@@ -109,7 +109,7 @@ https://github.com/adpit/latihangolang/commits/master
 
 jadi caranya untuk edit dan simpan ke github adalah
 1.editfile(simpan)
-2.git add
+2.git add coba ganti dengan git writem, git add jika file baru dibuat 
 3.git commit(beri penjelasan simpan)
 4.git push (nanti dimita user dan password jika belum)
 
