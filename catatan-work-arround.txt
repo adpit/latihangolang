@@ -1,0 +1,79 @@
+# ini adalah contoh untuk encoode file php yang berhasil, yang menarik adalah encodenya mengunakan hexdecoder bukan phpdecoder?
+http://ddecode.com/hexdecoder/?results=ad44e46d8aad211f65cbc8bf2925a2d2
+
+# mysql cpanel gagal up dengan pesan error seperti ini :
+----
+InnoDB: End of page dump
+2017-06-29 23:59:25 7ff5d3d68740 InnoDB: uncompressed page, stored checksum in field1 1204599313, calculated checksums for field1: crc32 1107249078, innodb 1204599313, none 3735928559, stored c
+hecksum in field2 4169569233, calculated checksums for field2: crc32 1107249078, innodb 1336309754, none 3735928559, page LSN 5 512466124, low 4 bytes of LSN at page end 512454894, page number
+(if stored to page already) 5, space id (if created with >= MySQL-4.1.1 and stored already) 0
+InnoDB: Page may be a transaction system page
+InnoDB: Database page corruption on disk or a failed
+InnoDB: file read of page 5.
+InnoDB: You may have to recover from a backup.
+InnoDB: It is also possible that your operating
+InnoDB: system has corrupted its own file cache
+InnoDB: and rebooting your computer removes the
+InnoDB: error.
+InnoDB: If the corrupt page is an index page
+InnoDB: you can also try to fix the corruption
+InnoDB: by dumping, dropping, and reimporting
+InnoDB: the corrupt table. You can use CHECK
+InnoDB: TABLE to scan your table for corruption.
+InnoDB: See also http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: about forcing recovery.
+InnoDB: Ending processing because of a corrupt database page.
+2017-06-29 23:59:25 7ff5d3d68740  InnoDB: Assertion failure in thread 140693797766976 in file buf0buf.cc line 4295
+InnoDB: We intentionally generate a memory trap.
+InnoDB: Submit a detailed bug report to http://bugs.mysql.com.
+InnoDB: If you get repeated assertion failures or crashes, even
+InnoDB: immediately after the mysqld startup, there may be
+InnoDB: corruption in the InnoDB tablespace. Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: about forcing recovery.
+23:59:25 UTC - mysqld got signal 6 ;
+This could be because you hit a bug. It is also possible that this binary
+or one of the libraries it was linked against is corrupt, improperly built,
+or misconfigured. This error can also be caused by malfunctioning hardware.
+We will try our best to scrape up some info that will hopefully help
+diagnose the problem, but since we have already crashed,
+something is definitely wrong and this may fail.
+
+# jika dari link yang merujuk adalah kita harus tambakan, baris dibawah ini pada file my.cnf, setelah itu restart mysql
+innodb_force_recovery = 1
+
+# cek pada error log tunggu sampai proses pengecekan selesai,
+2017-06-30 04:20:54 32026 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2017-06-30 04:27:09 32026 [Note] InnoDB: Restoring possible half-written data pages
+2017-06-30 04:27:09 32026 [Note] InnoDB: from the doublewrite buffer...
+InnoDB: Warning: database page corruption or a failed
+InnoDB: file read of space 0 page 5.
+InnoDB: Trying to recover it from the doublewrite buffer.
+2017-06-30 04:27:09 32026 [Note] InnoDB: Recovered the page from the doublewrite buffer.
+InnoDB: Doing recovery: scanned up to log sequence number 21987302604
+2017-06-30 04:27:13 32026 [Note] InnoDB: 128 rollback segment(s) are active.
+2017-06-30 04:27:13 32026 [Note] InnoDB: Waiting for purge to start
+2017-06-30 04:27:13 32026 [Note] InnoDB: 5.6.35 started; log sequence number 21987302604
+2017-06-30 04:27:13 32026 [Note] InnoDB: !!! innodb_force_recovery is set to 1 !!!
+2017-06-30 04:27:13 32026 [Note] Server hostname (bind-address): '*'; port: 3306
+2017-06-30 04:27:13 32026 [Note] IPv6 is available.
+2017-06-30 04:27:13 32026 [Note]   - '::' resolves to '::';
+2017-06-30 04:27:13 32026 [Note] Server socket created on IP: '::'.
+2017-06-30 04:27:14 32026 [Note] Event Scheduler: Loaded 0 events
+2017-06-30 04:27:14 32026 [Note] /usr/sbin/mysqld: ready for connections.
+Version: '5.6.35'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  MySQL Community Server (GPL)
+InnoDB: innodb_force_recovery is on: we do not allow
+InnoDB: database modifications by the user. Shut down
+InnoDB: mysqld and edit my.cnf so thatInnoDB: innodb_force_... is removed.
+InnoDB: innodb_force_recovery is on: we do not allow
+InnoDB: database modifications by the user. Shut down
+InnoDB: mysqld and edit my.cnf so thatInnoDB: innodb_force_... is removed.
+InnoDB: innodb_force_recovery is on: we do not allow
+InnoDB: database modifications by the user. Shut down
+InnoDB: mysqld and edit my.cnf so thatInnoDB: innodb_force_... is removed.
+InnoDB: innodb_force_recovery is on: we do not allow
+
+# jika sudah muncul pesan diatas sebaiknya langsung ubah kembali my.cnf hapus atau komen baris
+innodb_force_recovery = 1
+
+# dan restart kembali mysql servicenya.
