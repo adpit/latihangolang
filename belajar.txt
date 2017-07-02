@@ -109,7 +109,7 @@ https://github.com/adpit/latihangolang/commits/master
 
 jadi caranya untuk edit dan simpan ke github adalah
 1.editfile(simpan)
-2.git add coba ganti dengan git writem, git add jika file baru dibuat 
+2.git add coba ganti dengan git writem, git add jika file baru dibuat
 3.git commit(beri penjelasan simpan)
 4.git push (nanti dimita user dan password jika belum)
 
@@ -124,3 +124,43 @@ godoc.org gudang package contoh : https://godoc.org/fmt
 # materi, Packages && Docs
 Packages dapat diibaratkan seperti folder, yang berisikan lebih banyak folder dan file-file dalamnya
 Packages penamaan dari namanya unik dan berada didalam folder GOSDK/src/
+## Packages && Docs
+Packages dapat dikatakan sebagai sebuah nama lain dari folder, sebuah folder didalamnya berisi folder dan file, jadi
+Packages dapat beriskan lebih banyak Packages dan file
+Packages memiliki nama yang unik, pathnya setelah folder src.
+lihat pada sumber go atau SDK atau ROOTPATH (C:\Go\src) untuk memastikan bagaimana Packages diatur.
+
+""C:\Go\src\archive\net\http" sebagai contoh ada bnyak folder dan file didalamnya, ingat Packages hanya nama lain dari folder, Packages = folder
+
+# godoc.org dokumentasi untuk bahasa pemograman GO harap ingat url berhububgan dengan Packages yang didokumentasikan
+godoc.org/net/http nanti akan ada penjelasan untuk fungsinya
+
+ingat!
+godoc.org/net/http 			-> di url browser
+import "net/http"  			-> pada isi skrip
+C:\Go\src\archive\net\http 	-> hirakry SDK/ROOTPATH
+
+pertanyaan, pada path C:\Go\src\archive\net\http\cookiejar, url apa untuk mencarinya di godoc.org?
+jawabanya, godoc.org/net/http/cookiejar
+silakan explore path lain dan coba cari di godoc.org
+
+# cara mengatur code kita,
+-> go get github.com/goestoeleven/golangtraning
+pada path ROOTPATH
+-> C:\Desktop\skrip\src\github\goestoeleven\jurasicmidi
+pada godoc.org
+-> godoc.org/github/jurasicmidi/httprouter
+
+# dokumentasi godoc.org vs golang.org vs godoc --help
+
+golang.org/pkg/net/http
+* Go dokumentasi juga dapat ditemukan di golang.org
+* golang.org hanya memliki dokumentasi dari sumber GO kamu tidak dapat temukan sumber github
+* (REKOMEND)godoc.org memili semua dokumentasi Packages termasuk sorce GO dan juga github
+
+Packages nama:
+https://golang.org/doc/code.html#PackageNames
+https://golang.org/doc/effective_go.html#names
+
+# mencari sebuah Packages atau Library di godoc.org
+klik -> godoc.org/?q=uuid pilih yang ada RFCnya dengan banyak fitur 
