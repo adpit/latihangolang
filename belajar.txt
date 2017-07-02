@@ -1,3 +1,5 @@
+# untuk commmit ke github dari PC rumah, simpan file yang telah diubah, masuk ke terminal
+# ketik git status, lalu git commit -am "bla-bla", setelah itu git push untuk update perubahan
 
 # materi, setup editor ATOM
 download git dan install dulu,
@@ -164,3 +166,26 @@ https://golang.org/doc/effective_go.html#names
 
 # mencari sebuah Packages atau Library di godoc.org
 klik -> godoc.org/?q=uuid pilih yang ada RFCnya dengan banyak fitur
+
+
+## Mengunakan Library (aka gunakan skrip orang lain, aka gunakan code pada Packages lain)
+
+# penamaan dan pengaturan, file dan Packages
+Packages Nama harus sama dengan folder didalamnya
+code_source : package stringutil
+path : 02_library\stringutil
+
+contoh: baris code "Packages Main" pada folder helloword, hanya memilik satu main fungsi kamu dapat gunakan fungsi lain pada main Packages
+
+file nama dari skrip : jelas dan singkat. 02_library\stringutil\reverse.go
+
+kamu dapat memili banyak file dan sebuah Package
+
+
+# capitalization: Public(Capitalized), private(camelCase)
+untuk gunakan fungsi, variabel dan types
+
+ingat untuk sebuah fungsi yang tersedia diluar sebuah packet nama fungsi harus gunakan khuruf besar di awal
+contoh source_code: func Reverse(s string) string {
+
+}
