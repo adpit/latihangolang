@@ -163,4 +163,4 @@ https://golang.org/doc/code.html#PackageNames
 https://golang.org/doc/effective_go.html#names
 
 # mencari sebuah Packages atau Library di godoc.org
-klik -> godoc.org/?q=uuid pilih yang ada RFCnya dengan banyak fitur 
+klik -> godoc.org/?q=uuid pilih yang ada RFCnya dengan banyak fitur
