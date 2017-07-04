@@ -1,7 +1,8 @@
+
 # untuk commmit ke github dari PC rumah, simpan file yang telah diubah, masuk ke terminal
 # ketik git status, lalu git commit -am "bla-bla", setelah itu git push untuk update perubahan
 
-# materi, setup editor ATOM dan download tools yang dibutuhkan
+# materi ke 1-3, setup editor ATOM dan download tools yang dibutuhkan
 download git dan install dulu,
 download dan install atom editor
 donwload dan install Go, PROGRAM
@@ -53,7 +54,7 @@ Hello World
 3. sedangkan perintah "go build" untuk membuat file 1.go menjadi binarry, ini yang dinamakan atas folder utama dimana skrip berada
 compile pada unix,  dengan perintah "go install" setelah itu masukan hasil complinya ke /bin, sehingga aplikasi bisa langsung di pangil "hello"
 
-# materi, go get
+# materi ke 4 , go get
 
 // create repository, buat gitbaru dan clone ke pc
 https://github.com/new
@@ -112,7 +113,7 @@ git log -> pada terminal atom untuk melihat log dari commit yang kita kirim ke g
 go get -> sama seperti clone git clone repository ke komputer kita (error belm tau kenapa di windows)
 godoc.org gudang package contoh : https://godoc.org/fmt
 
-## materi, Packages && Docs
+## materi ke 5, Packages && Docs
 Packages dapat dikatakan sebagai sebuah nama lain dari folder, sebuah folder didalamnya berisi folder dan file, jadi
 Packages dapat beriskan lebih banyak Packages dan file
 Packages memiliki nama yang unik, pathnya setelah folder src.
@@ -153,7 +154,7 @@ https://golang.org/doc/effective_go.html#names
 // mencari sebuah Packages atau Library di godoc.org
 klik -> godoc.org/?q=uuid pilih yang ada RFCnya dengan banyak fitur
 
-## Mengunakan Library (aka gunakan skrip orang lain, aka gunakan code pada Packages lain)
+## materi ke 6, Mengunakan Library (aka gunakan skrip orang lain, aka gunakan code pada Packages lain)
 
 // didalam lab1 ini kita akan membuat execude program pada lab/helloworld lalu mengunakan variabel diluar dari folder lab/helloworld
 // yaitu pada folder lab/stringutil yang berfungsi sebagai library/package/ yang menjadi utility pengelolaan string dari lab/helloworld
@@ -199,4 +200,4 @@ error:
 // go fmt, format skrip jika kita ketik " go fmt" maka akan terlihat skrip kita sudah sesuai atau tidak formatnya
 // tulis skrip sebelah kiri semua lalu ketik go fmt maka akan terformat seperti condong ke dalam 'kanan'
 
-## Materi: go build & go install
+## Materi ke 7: go build & go install
