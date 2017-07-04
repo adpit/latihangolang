@@ -1,7 +1,7 @@
 # untuk commmit ke github dari PC rumah, simpan file yang telah diubah, masuk ke terminal
 # ketik git status, lalu git commit -am "bla-bla", setelah itu git push untuk update perubahan
 
-# materi, setup editor ATOM
+# materi, setup editor ATOM dan download tools yang dibutuhkan
 download git dan install dulu,
 download dan install atom editor
 donwload dan install Go, PROGRAM
@@ -11,16 +11,15 @@ go env : yang perlu di perhatikan adalah bagian dari GOPATH dan GOROOT(SDK)
 GOPATH: tempat penyimpanan proyek/kerjaan kamu
 GOROOT: goolang source codes
 
-cara setnya
-
+# config pada linux
 vim ~/.bash_profile
 
-# for GO programing
+# for GO programing, sesuaikan dimana gopath sebagai tempat kita membuat projek
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/Documents/go"
 export PATH= "$HOME/Documents/go/bin:$PATH"
 
-#materi, hello word
+#materi, hello word untuk skrip berikutnya penjelasan akan di masukan pada skrip terkait.
 1. hello word, 1.go
 
 package main
@@ -32,7 +31,6 @@ import "fmt"
 // Ini memungkinkan Anda untuk menggunakan kode dalam program Anda yang telah ditulis orang lain. Paket juga kadang disebut sebagai library.
 
 // Paket "fmt" sedang diimpor.
-
 
 func main()  {
     fmt.Println("Hello World!")
@@ -47,7 +45,6 @@ func main()  {
 // "Hello World!", Parameter adalah variabel yang merupakan bagian dari tanda tangan func (func declaration).
 // Argumen adalah ungkapan yang digunakan saat memanggil func. Sumber: dimodifikasi dari stackoverflow
 
-
 2. klik dibagian bawah ada terminal/konsole dari plugin atom yang kita install, lalu  ketik
 
 C:\Users\adpit\github> go run .\1.go
@@ -56,66 +53,58 @@ Hello World
 3. sedangkan perintah "go build" untuk membuat file 1.go menjadi binarry, ini yang dinamakan atas folder utama dimana skrip berada
 compile pada unix,  dengan perintah "go install" setelah itu masukan hasil complinya ke /bin, sehingga aplikasi bisa langsung di pangil "hello"
 
-#materi, go get
+# materi, go get
 
-buat gitbaru dan clone ke pc
+// create repository, buat gitbaru dan clone ke pc
 https://github.com/new
 	Repository name: latihangolang
 	Public
 	Initialize this repository with a README
 	add .gitignore:Go
-create repository
 
-pada repository baru klik tombol download/clone nanti dapat url seperti ini:
+// pada repository baru klik tombol download/clone nanti dapat url seperti ini:
 (ssh)git@github.com:adpit/latihangolang.git # gak bisa masalah restric ganti jadi
 (https)https://github.com/adpit/latihangolang.git
 
-lihat ini untuk clone pada atom editor: ctrl+shift+p
+// lihat ini untuk clone pada atom editor: ctrl+shift+p
 file:///C:/Users/adpit/Desktop/data/atom-x64-windows/2.gif
 
-pada editor atom tekan : ctrl+shift+p
+// pada editor atom tekan : ctrl+shift+p
 lalu ketik 			   : git clone
 masukan urlnya		   : https://github.com/adpit/latihangolang
 
-hasilnya terbentuk project yang di clone, untuk diperhatikan sebuah file dengan nama .gitignore
+// hasilnya terbentuk project yang di clone, untuk diperhatikan sebuah file dengan nama .gitignore
 
 .gitignore  adalah file untuk projecy go, karena tadi kita pilih go diatas. file ini .gitignore memberitahukan pada git / github tidak metrack file yang ada dalam list
 
-cara commit mengunakan editor atom sebelumnya tambahkan/install dulu package git-plus jika belum ada
+// cara commit mengunakan editor atom sebelumnya tambahkan/install dulu package git-plus jika belum ada
 file:///C:/Users/adpit/Desktop/data/atom-x64-windows/3.gif
 
 lalu ketik -> cmd
 git config --global user.name "arieibra rumah"
 git config --global user.email adpit31@gmail.com
 
-tambahan untuk linux setting github : Permanently authenticating with Git repositories,
-
-Run following command to enable credential caching.
-
+// tambahan untuk linux setting github : Permanently authenticating with Git repositories,
+Run following command to enable credential caching:
 $ git config credential.helper store
 $ git push https://github.com/repo.git
 
-Username for 'https://github.com': <USERNAME>
-Password for 'https://USERNAME@github.com': <PASSWORD>
-Use should also specify caching expire,
-
-git config --global credential.helper 'cache --timeout 7200'
-After enabling credential caching, it will be cached for 7200 seconds (2 hour).
+Use should also specify caching expire: git config --global credential.helper 'cache --timeout 7200'
 ref: https://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid
 
-coba edit sebuah file pada project yang kita clone tadi lalu simpan(ini penting!), ctrl + shift + p "add plus".
+// coba edit sebuah file pada project yang kita clone tadi lalu simpan(ini penting!), ctrl + shift + p "add plus".
 tekan ctrl+shift+p "commit plus", tulisakan keterangan updatenya., jangan lupa ctrl+s untuk simpan
 tekan ctrl+shift+p "push plus", jika step ini berhasil cek pada
 https://github.com/adpit/latihangolang/commits/master
 (bisa juga commit pada window git+ pada terminal atom)
 
-jadi caranya untuk edit dan simpan ke github adalah
+// jadi caranya untuk edit dan simpan ke github adalah (push kita upload) sebelumnya gunakan git pull untuk download agar tidak konflik
 1.editfile(simpan)
 2.git add coba ganti dengan git writem, git add jika file baru dibuat
 3.git commit(beri penjelasan simpan)
 4.git push (nanti dimita user dan password jika belum)
 
-add paket pada atom editor, git clone
+// add paket pada atom editor, git clone
 file:///C:/Users/adpit/Desktop/data/atom-x64-windows/add-paket-atom.gif
 
 # REVIEW
@@ -123,74 +112,91 @@ git log -> pada terminal atom untuk melihat log dari commit yang kita kirim ke g
 go get -> sama seperti clone git clone repository ke komputer kita (error belm tau kenapa di windows)
 godoc.org gudang package contoh : https://godoc.org/fmt
 
-# materi, Packages && Docs
-Packages dapat diibaratkan seperti folder, yang berisikan lebih banyak folder dan file-file dalamnya
-Packages penamaan dari namanya unik dan berada didalam folder GOSDK/src/
-## Packages && Docs
+## materi, Packages && Docs
 Packages dapat dikatakan sebagai sebuah nama lain dari folder, sebuah folder didalamnya berisi folder dan file, jadi
 Packages dapat beriskan lebih banyak Packages dan file
 Packages memiliki nama yang unik, pathnya setelah folder src.
 lihat pada sumber go atau SDK atau ROOTPATH (C:\Go\src) untuk memastikan bagaimana Packages diatur.
 
-""C:\Go\src\archive\net\http" sebagai contoh ada bnyak folder dan file didalamnya, ingat Packages hanya nama lain dari folder, Packages = folder
+// C:\Go\src\archive\net\http" sebagai contoh ada bnyak folder dan file didalamnya, ingat Packages hanya nama lain dari folder, Packages = folder
 
-# godoc.org dokumentasi untuk bahasa pemograman GO harap ingat url berhububgan dengan Packages yang didokumentasikan
-godoc.org/net/http nanti akan ada penjelasan untuk fungsinya
+// godoc.org dokumentasi untuk bahasa pemograman GO harap ingat url berhububgan dengan Packages yang didokumentasikan
+// sedangkan godoc.org/net/http nanti akan ada penjelasan untuk fungsinya
 
-ingat!
+// ingat!
 godoc.org/net/http 			-> di url browser
 import "net/http"  			-> pada isi skrip
 C:\Go\src\archive\net\http 	-> hirakry SDK/ROOTPATH
 
-pertanyaan, pada path C:\Go\src\archive\net\http\cookiejar, url apa untuk mencarinya di godoc.org?
+# pertanyaan, pada path C:\Go\src\archive\net\http\cookiejar, url apa untuk mencarinya di godoc.org?
 jawabanya, godoc.org/net/http/cookiejar
 silakan explore path lain dan coba cari di godoc.org
 
-# cara mengatur code kita,
+// cara mengatur skrip kita,
 -> go get github.com/goestoeleven/golangtraning
-pada path ROOTPATH
+// pada path ROOTPATH
 -> C:\Desktop\skrip\src\github\goestoeleven\jurasicmidi
-pada godoc.org
+// pada godoc.org
 -> godoc.org/github/jurasicmidi/httprouter
 
 # dokumentasi godoc.org vs golang.org vs godoc --help
 
-golang.org/pkg/net/http
+// golang.org/pkg/net/http
 * Go dokumentasi juga dapat ditemukan di golang.org
 * golang.org hanya memliki dokumentasi dari sumber GO kamu tidak dapat temukan sumber github
 * (REKOMEND)godoc.org memili semua dokumentasi Packages termasuk sorce GO dan juga github
 
-Packages nama:
+// Packages nama dengan bentuk url pada golang.org:
 https://golang.org/doc/code.html#PackageNames
 https://golang.org/doc/effective_go.html#names
 
-# mencari sebuah Packages atau Library di godoc.org
+// mencari sebuah Packages atau Library di godoc.org
 klik -> godoc.org/?q=uuid pilih yang ada RFCnya dengan banyak fitur
-
 
 ## Mengunakan Library (aka gunakan skrip orang lain, aka gunakan code pada Packages lain)
 
-# didalam lab1 ini kita akan membuat execude program pada lab/helloworld lalu mengunakan variabel diluar dari folder lab/helloworld
-# yaitu pada folder lab/stringutil yang berfungsi sebagai library/package/ yang menjadi utility pengelolaan string dari lab/helloworld
+// didalam lab1 ini kita akan membuat execude program pada lab/helloworld lalu mengunakan variabel diluar dari folder lab/helloworld
+// yaitu pada folder lab/stringutil yang berfungsi sebagai library/package/ yang menjadi utility pengelolaan string dari lab/helloworld
 
-# penamaan dan pengaturan, file dan Packages
+// penamaan dan pengaturan, file dan Packages
 definisi nama Packages harus sama dengan folder didalamnya
 skrip_ditulis : package stringutil
 nama_foldernya_fileberada : lab\stringutil
 
-sedangkan Packages Main hanya ada satu disetiap execude program yang kita buat
+// sedangkan Packages Main hanya ada satu disetiap execude program yang kita buat
 skrip_ditulis: "Packages Main"
 pada folder helloword
 
-penamaan sebuah file nama disarankan jelas dan singka contoh : lab\stringutil\reverse.go
+// penamaan sebuah file nama disarankan jelas dan singka contoh : lab\stringutil\reverse.go
 
-kamu dapat memili banyak file dan sebuah Package
-
+// dalam lab1 ini kita membuat folder name dengan nama lab1/stringutil yang digunakan sebagai package dari skrip kita nah kamu dapat membuat banyak file (fungsi-fungsi) lain dalam sebuah Package/folder di lab1/stringutil
 
 # capitalization: Public(Capitalized), private(camelCase)
-untuk gunakan fungsi, variabel dan types
+perbedaan keduanya adalah yang Capitalized sebagai fungsi public sedangkan
+camelCase sebagai fungsi private yang hanya dapat digunakan didalam skrip package sendiri
 
-ingat untuk sebuah fungsi yang tersedia diluar sebuah packet nama fungsi harus gunakan khuruf besar di awal
-contoh source_code: func Reverse(s string) string {
+// ingat untuk sebuah fungsi yang dapat digunakan diluar sebuah packet, nama fungsi "Reverse" mengunakan huruf besar di awal silakan lihat
+nama_skrip: lab1/stringutil/reverse.go
+skrip_ditulis_penjelasan_lengkapnya_dibuka_filenya:
+func Reverse(s string) string { // Reverse adalah public fungsi
+return reverseTwo(s) // reverseTwo adalah private fungsi jadi hanya tersedia didalam package
 
-}
+// coba kita jalankan skripnya mengunakan public fungsi pada hello.go
+nama_skrip: lab1/helloworld/hello.go
+skrip_ditulis_penjelasan_lengkapnya_dibuka_filenya:
+fmt.Println(stringutil.Reverse("!oG ,olleH")) // go run hasilnya berhasil Hello, Go! (public fungsi)
+
+// coba kita tambahkan untuk mengunakan private fungsi pada hello.go
+nama_skrip: lab1/helloworld/hello.go
+skrip_ditulis_penjelasan_lengkapnya_dibuka_filenya:
+fmt.Println(stringutil.reverseTwo("!oG ,olleH")) // go run hasilnya error (private fungsi)
+error:
+.\hello.go:13: cannot refer to unexported name stringutil.reverseTwo
+.\hello.go:13: undefined: stringutil.reverseTwo
+
+// jadi perbedaan dari public dan private fungsi dari penulisanya capitalized dan camelCase.
+
+// go fmt, format skrip jika kita ketik " go fmt" maka akan terlihat skrip kita sudah sesuai atau tidak formatnya
+// tulis skrip sebelah kiri semua lalu ketik go fmt maka akan terformat seperti condong ke dalam 'kanan'
+
+## Materi: go build & go install

@@ -9,5 +9,6 @@ import (
 )
 
 func main() {
-	fmt.Println(stringutil.Reverse("!oG ,olleH"))
+	fmt.Println(stringutil.Reverse("!oG ,olleH")) // go run hasilnya berhasil Hello, Go! (public fungsi)
+	// fmt.Println(stringutil.reverseTwo("!oG ,olleH")) // go run hasilnya error (private fungsi)
 }
