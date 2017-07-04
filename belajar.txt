@@ -170,14 +170,19 @@ klik -> godoc.org/?q=uuid pilih yang ada RFCnya dengan banyak fitur
 
 ## Mengunakan Library (aka gunakan skrip orang lain, aka gunakan code pada Packages lain)
 
+# didalam lab1 ini kita akan membuat execude program pada lab/helloworld lalu mengunakan variabel diluar dari folder lab/helloworld
+# yaitu pada folder lab/stringutil yang berfungsi sebagai library/package/ yang menjadi utility pengelolaan string dari lab/helloworld
+
 # penamaan dan pengaturan, file dan Packages
-Packages Nama harus sama dengan folder didalamnya
-code_source : package stringutil
-path : 02_library\stringutil
+definisi nama Packages harus sama dengan folder didalamnya
+skrip_ditulis : package stringutil
+nama_foldernya_fileberada : lab\stringutil
 
-contoh: baris code "Packages Main" pada folder helloword, hanya memilik satu main fungsi kamu dapat gunakan fungsi lain pada main Packages
+sedangkan Packages Main hanya ada satu disetiap execude program yang kita buat
+skrip_ditulis: "Packages Main"
+pada folder helloword
 
-file nama dari skrip : jelas dan singkat. 02_library\stringutil\reverse.go
+penamaan sebuah file nama disarankan jelas dan singka contoh : lab\stringutil\reverse.go
 
 kamu dapat memili banyak file dan sebuah Package
 
