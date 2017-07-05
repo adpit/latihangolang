@@ -200,4 +200,54 @@ error:
 // go fmt, format skrip jika kita ketik " go fmt" maka akan terlihat skrip kita sudah sesuai atau tidak formatnya
 // tulis skrip sebelah kiri semua lalu ketik go fmt maka akan terformat seperti condong ke dalam 'kanan'
 
-## Materi ke 7: go build & go install
+## materi ke 7, go build & go install (review)
+// sebelumnya kita sudah membuat 2 package yaitu : lab1/helloworld dan lab1/stringutil
+// kita juga sudah memperispakan 2 file yaitu: hello.go dan reverse.go
+
+// ketik pada terminal di tempat lab1/stringutil
+go build // won't produce an output file
+go install // will place the package inside the pkg direcory of the workspace
+
+// Path (go install ) + (go install )
+----
+C:\Users\adpit\go\src\github.com\adpit\latihangolang\lab1\stringutil
+
+// Path file hasil dari (go install )
+----
+C:\Users\adpit\go\pkg\windows_amd64\github.com\adpit\latihangolang\lab1
+
+# import
+
+// cara import sebuah package yang ada dalam GOROOT pada src
+nama_skrip: lab1/helloworld/hello.go
+skrip_ditulis_penjelasan_lengkapnya_dibuka_filenya:
+	"fmt"
+	"github.com/adpit/latihangolang/lab1/stringutil"
+
+// dan kemudian kita gunakan satu fungsi public  "stringutil.Reverse"
+nama_skrip: lab1/helloworld/hello.go
+skrip_ditulis_penjelasan_lengkapnya_dibuka_filenya:
+	fmt.Println(stringutil.Reverse("!oG ,olleH")) // go run hasilnya berhasil Hello, Go! (public fungsi)
+
+
+# review
+go build, builds go code; if code is package main, it creates a binary executable and drops it in the package main’s folder;
+if code is just a package, it builds it then throws away the binary.
+
+go install, builds and installs go code; if code is package main, it creates a binary executable and drops it in the workspace’s bin folder;
+if code is a package, it builds it then drops it in the pkg folder (a file with a .a extension)
+
+import, import path is everything after the “src” folder in your workspace use the last folder in the import path to reference the package
+in your code you can alias packages in your imports
+
+# tugas
+Search for uuid at godoc.org
+use go get to get the code for nu7hatch/gouuid
+open up finder
+locate this code
+take a screenshot of this
+Create a file that imports this code
+alias the package as just uuid
+take a screenshot of this
+
+## materi ke 8-9, Documentation & Variadic
